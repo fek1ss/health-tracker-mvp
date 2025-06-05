@@ -160,26 +160,24 @@ const Day = () => {
           {message.text}
         </p>
       </form>
-      <p className="text-black">
-        <div className="text-black mt-6">
-          {dailyData && dailyData.length > 0 ? (
-            dailyData.map((value, index) => (
-              <div
-                key={index}
-                className="mb-2 p-2 border border-gray-300 rounded"
-              >
-                <p>Дата: {value.timestamp}</p>
-                <p>Калории:{value.calories}</p>
-                <p>Шаги: {value.steps}</p>
-                <p>Сон:{value.sleep} ч</p>
-                <p>Настроение: {value.mood}</p>
-              </div>
-            ))
-          ) : (
-            <p>Нет записей</p>
-          )}
-        </div>
-      </p>
+      <div className="text-black mt-6">
+        {dailyData && dailyData.length > 0 ? (
+          dailyData.map((value, index) => (
+            <div
+              key={index}
+              className="mb-2 p-2 border border-gray-300 rounded"
+            >
+              <p>Дата: {value.timestamp}</p>
+              <p>Калории:{value.calories}</p>
+              <p>Шаги: {value.steps}</p>
+              <p>Сон:{value.sleep} ч</p>
+              <p>Настроение: {value.mood}</p>
+            </div>
+          ))
+        ) : (
+          <p>Нет записей</p>
+        )}
+      </div>
     </div>
   );
 };
