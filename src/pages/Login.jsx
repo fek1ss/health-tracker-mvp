@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GOOGLE_SCRIPT_URL } from '../config';
+import GOOGLE_SCRIPT_URL from '../config';
 
 const Login = () => {
   const [name, setName] = useState('');
@@ -37,10 +37,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleLogin}
-        className="bg-white p-8 rounded shadow-md w-full max-w-sm"
-      >
+      <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-4 text-black">Login</h2>
         <input
           className="w-full p-2 border mb-4 border border-black rounded-lg text-black"
@@ -56,15 +53,10 @@ const Login = () => {
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        <button
-          type="submit"
-          className="w-full bg-green-500 p-2 rounded-lg hover:bg-green-600 cursor-pointer"
-        >
+        <button type="submit" className="w-full bg-green-500 p-2 rounded-lg hover:bg-green-600 cursor-pointer">
           Login
         </button>
-        {isLoading && (
-          <p className="text-black">Секунду... ❤️( ◡‿◡ )</p>
-        )}
+        {isLoading && <p className="text-black">Секунду... ❤️( ◡‿◡ )</p>}
         {}
       </form>
     </div>

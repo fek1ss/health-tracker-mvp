@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GOOGLE_SCRIPT_URL } from '../config';
+import GOOGLE_SCRIPT_URL from '../config.js';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -26,9 +26,7 @@ const Register = () => {
     const userExists = rows.find(row => row.email === formData.email);
     console.log(userExists);
     if (userExists) {
-      alert(
-        'Пользователь с такой почтой уже зарегистрирован ❤️( ◡‿◡ )',
-      );
+      alert('Пользователь с такой почтой уже зарегистрирован ❤️( ◡‿◡ )');
     } else {
       fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -43,13 +41,8 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md w-full max-w-sm"
-      >
-        <h2 className="text-xl font-bold mb-4 text-black">
-          Регистрация
-        </h2>
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-sm">
+        <h2 className="text-xl font-bold mb-4 text-black">Регистрация</h2>
         <input
           name="name"
           placeholder="Имя"
@@ -101,10 +94,7 @@ const Register = () => {
           className="w-full p-2 border mb-4 border border-black rounded-lg text-black"
           required
         />
-        <button
-          type="submit"
-          className="w-full bg-green-500 p-2 rounded-lg hover:bg-green-600 cursor-pointer"
-        >
+        <button type="submit" className="w-full bg-green-500 p-2 rounded-lg hover:bg-green-600 cursor-pointer">
           Зарегистрироваться
         </button>
         <Link to="/login" className="text-green-500">

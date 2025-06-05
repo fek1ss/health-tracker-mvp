@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GOOGLE_SCRIPT_URL } from '../config';
+import GOOGLE_SCRIPT_URL from '../config';
 
 const Tip = () => {
   const [tip, setTip] = useState('');
@@ -32,9 +32,7 @@ const Tip = () => {
       </Link>
       <h1 className="text-black text-2xl">Совет дня</h1>
       <div className="bg-green-400 w-200 h-40 rounded-lg flex flex-col items-center justify-center">
-        <p className="text-lg text-gray-700">
-          {loading ? 'Загрузка...' : tip}
-        </p>
+        <p className="text-lg text-gray-700">{loading ? 'Загрузка...' : tip}</p>
         ❤️( ◡‿◡ )
       </div>
     </div>
