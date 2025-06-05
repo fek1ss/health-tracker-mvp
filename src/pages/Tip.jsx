@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import GOOGLE_SCRIPT_URL from '../config';
+import GOOGLE_SCRIPT_URL from '../config.js';
 
 const Tip = () => {
   const [tip, setTip] = useState('');
