@@ -21,11 +21,12 @@
 - Google Sheets в качестве базы данных
 
 ## 📦 Установка и запуск
-
-1. Клонируй репозиторий:
    ```bash
    git clone https://github.com/yourusername/health-tracker.git
    cd health-tracker
    npm i
    npm run dev
    ```
+
+## Деплой на Vercel 
+https://health-tracker-mvp.vercel.app/
